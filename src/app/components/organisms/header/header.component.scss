@@ -131,7 +131,7 @@
   }
 
   &__btn-primary {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     gap: $spacing-xs;
@@ -148,6 +148,10 @@
     transition: all $transition-base;
     box-shadow: $shadow-primary;
     white-space: nowrap;
+
+    @include respond-to('md') {
+      display: flex;
+    }
 
     &:hover {
       background-color: $primary-hover;
@@ -208,13 +212,12 @@
   &__mobile-menu {
     position: fixed;
     top: 0;
-    right: 0;
+    right: -280px;
     width: 280px;
     height: 100vh;
     background-color: $surface-dark;
     border-left: 1px solid $slate-800;
-    transform: translateX(100%);
-    transition: transform $transition-base;
+    transition: right $transition-base;
     z-index: 1000;
     overflow-y: auto;
     padding: $spacing-2xl $spacing-lg;
@@ -227,7 +230,7 @@
     }
 
     &--open {
-      transform: translateX(0);
+      right: 0;
     }
   }
 

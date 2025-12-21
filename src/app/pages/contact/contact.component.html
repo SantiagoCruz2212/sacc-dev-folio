@@ -44,10 +44,13 @@
             </div>
             <button
               class="email-card__copy-btn"
+              [class.email-card__copy-btn--copied]="emailCopied"
               (click)="copyEmail()"
-              title="Copiar email"
+              [title]="emailCopied ? 'Copiado!' : 'Copiar email'"
               type="button">
-              <span class="material-symbols-outlined">content_copy</span>
+              <span class="material-symbols-outlined">
+                {{ emailCopied ? 'check' : 'content_copy' }}
+              </span>
             </button>
           </div>
           <div class="email-card__border"></div>

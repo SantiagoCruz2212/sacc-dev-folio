@@ -304,6 +304,15 @@
     &:active {
       transform: scale(0.95);
     }
+
+    &--copied {
+      background-color: rgba($primary-color, 0.15);
+      color: $primary-color;
+
+      .material-symbols-outlined {
+        animation: checkmark 0.3s ease;
+      }
+    }
   }
 
   &__border {
@@ -560,13 +569,20 @@
     height: 2.75rem;
     appearance: none;
     padding-right: 2.5rem;
+    cursor: pointer;
 
     @include respond-to('sm') {
       height: 3rem;
     }
 
     option {
-      color: $slate-900;
+      background-color: $slate-800;
+      color: $text-primary;
+      padding: 0.5rem;
+
+      &:disabled {
+        color: $text-secondary;
+      }
     }
   }
 
@@ -595,5 +611,19 @@
   75%, 100% {
     transform: scale(2);
     opacity: 0;
+  }
+}
+
+@keyframes checkmark {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }

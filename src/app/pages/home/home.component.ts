@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +9,16 @@ import { CommonModule } from '@angular/common';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
+  constructor(private router: Router) {}
+
+  navigateToProjects(): void {
+    this.router.navigate(['/proyectos']);
+  }
+
+  navigateToContact(): void {
+    this.router.navigate(['/contacto']);
+  }
+
   frameworks = [
     { name: 'Angular', logo: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAmzt92fKoihjzGyDBEJSx5qobebUvodvGhsB0j8RxqZgbeXglbaf5nia734ZAf2Jzd6OrFJaDgzyrRLQZGPSOdWEVps_G9bGH-nh5b5pDrgaDOhKj76781wn8HmNWpTrkyHkIr_uKtFp6UqzHcqWmg2oIPvN7YWr1LnNMxko2ORIedSzms4htjPj_OfRiYLpwTlWazjr668mEHtk_jWF35cUQrBPVRopXnhwshh3SVQz8Me1uznuUocPvy_Y9TneAT5MgyMm1RPCI' },
     { name: 'React', logo: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAmOeRTOgua9ZUxHKJ1o7MHzqLh4zWwjkXttOhw7CuQUSr0MPZmg8V4sLTSJvjQ4GFhatrf5mXlLFeL1D1P8GvLNYtuigRsKB5VYZhIDhIjR0zBSu4Co46vq9dHUrQ8SzDOlIcLrfPjdoG5TgvHOO7eSRMi8ka72UQighMykdl3JVm9xNI9bZ0UaQ-gfm3LKvuWLR0nG7-2v0w1lt1IgH2fdU2NJ57EWUTTNt_s33VWhtU9A_bxmm_NVHQ4-AzcHMf--3p_-VpoACw' },

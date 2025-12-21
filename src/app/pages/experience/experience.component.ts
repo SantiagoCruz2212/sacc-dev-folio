@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CvDownloadService } from '../../shared/services/cv-download.service';
 
 interface Experience {
   id: number;
@@ -34,6 +35,18 @@ interface Education {
   styleUrl: './experience.component.scss'
 })
 export class ExperienceComponent {
+  linkedInUrl = 'https://www.linkedin.com/in/santiago-castrocruz/';
+
+  constructor(private cvDownloadService: CvDownloadService) {}
+
+  downloadCV(): void {
+    this.cvDownloadService.openToast();
+  }
+
+  openLinkedIn(): void {
+    window.open(this.linkedInUrl, '_blank');
+  }
+
   experiences: Experience[] = [
     {
       id: 1,
