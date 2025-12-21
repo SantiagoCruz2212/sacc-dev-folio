@@ -1,0 +1,80 @@
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero__container">
+    <div class="hero__content">
+      <!-- Text Content -->
+      <div class="hero__text animate-fade-in-up">
+        <div class="hero__titles">
+          <h1 class="hero__title">
+            Santiago Andrés<br/>Castro Cruz
+          </h1>
+          <h2 class="hero__subtitle">
+            De la idea al despliegue
+          </h2>
+        </div>
+        <p class="hero__description">
+          Desarrollador Fullstack apasionado por crear experiencias digitales escalables y eficientes. Especializado en arquitecturas modernas y soluciones en la nube.
+        </p>
+        <div class="hero__actions">
+          <button class="btn btn--primary">
+            <span>Ver Proyectos</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+          <button class="btn btn--secondary">
+            <span>Contactar</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Profile Image -->
+      <div class="hero__image-wrapper animate-fade-in-up-delay">
+        <div class="hero__image-glow"></div>
+        <div class="hero__image">
+          <img src="images/profile/Santiago.jpg" alt="Santiago Andrés Castro Cruz">
+        </div>
+        <div class="hero__badge">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="4 17 10 11 4 5"></polyline>
+            <line x1="12" y1="19" x2="20" y2="19"></line>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tech Stack Section -->
+<section class="tech-stack animate-fade-in-up-delay-2">
+  <div class="tech-stack__container">
+    <div class="tech-stack__content">
+      <div class="tech-stack__header">
+        <div class="tech-stack__divider"></div>
+        <h3 class="tech-stack__title">Tech Stack</h3>
+        <div class="tech-stack__divider"></div>
+      </div>
+
+      <!-- Frameworks -->
+      <div class="tech-stack__grid">
+        <div class="tech-card" *ngFor="let tech of frameworks">
+          <img [src]="tech.logo" [alt]="tech.name + ' Logo'" class="tech-card__logo">
+          <span class="tech-card__name">{{tech.name}}</span>
+        </div>
+      </div>
+
+      <!-- Tools -->
+      <div class="tech-stack__grid tech-stack__grid--small">
+        <div class="tech-card" *ngFor="let tool of tools">
+          <img [src]="tool.logo" [alt]="tool.name + ' Logo'" class="tech-card__logo">
+          <span class="tech-card__name">{{tool.name}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

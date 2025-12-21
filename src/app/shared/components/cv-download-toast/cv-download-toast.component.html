@@ -1,0 +1,45 @@
+<!-- CV Download Toast -->
+<div
+  *ngIf="showToast$ | async"
+  class="cv-toast-backdrop"
+  (click)="onBackdropClick($event)">
+  <div class="cv-toast">
+    <!-- Close Button -->
+    <button
+      class="cv-toast__close"
+      (click)="closeToast()"
+      type="button"
+      aria-label="Cerrar">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+
+    <!-- Icon -->
+    <div class="cv-toast__icon">
+      <span class="material-symbols-outlined">description</span>
+    </div>
+
+    <!-- Content -->
+    <div class="cv-toast__content">
+      <h3 class="cv-toast__title">Descargar CV</h3>
+      <p class="cv-toast__description">Selecciona el idioma de tu preferencia</p>
+    </div>
+
+    <!-- Language Options -->
+    <div class="cv-toast__actions">
+      <button
+        class="cv-toast__btn cv-toast__btn--primary"
+        (click)="downloadCV('es')"
+        type="button">
+        <span class="cv-toast__btn-icon">🇪🇸</span>
+        <span class="cv-toast__btn-text">Español</span>
+      </button>
+      <button
+        class="cv-toast__btn cv-toast__btn--secondary"
+        (click)="downloadCV('en')"
+        type="button">
+        <span class="cv-toast__btn-icon">🇺🇸</span>
+        <span class="cv-toast__btn-text">English</span>
+      </button>
+    </div>
+  </div>
+</div>

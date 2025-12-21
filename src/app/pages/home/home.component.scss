@@ -1,0 +1,335 @@
+@import '../../../styles/abstracts/variables';
+@import '../../../styles/abstracts/mixins';
+
+// Hero Section
+.hero {
+  width: 100%;
+  padding: 3rem 0 5rem;
+
+  @include respond-to('md') {
+    padding: 5rem 0;
+  }
+
+  &__container {
+    padding: 0 $spacing-md;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    @include respond-to('md') {
+      padding: 0 2.5rem;
+    }
+
+    @include respond-to('lg') {
+      padding: 0 10rem;
+    }
+  }
+
+  &__content {
+    max-width: 960px;
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 2.5rem;
+
+    @include respond-to('md') {
+      flex-direction: row;
+      gap: 4rem;
+    }
+  }
+
+  &__text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+    align-items: center;
+
+    @include respond-to('md') {
+      text-align: left;
+      align-items: flex-start;
+    }
+  }
+
+  &__titles {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__title {
+    font-size: 2.25rem;
+    font-weight: $font-weight-black;
+    line-height: 1.1;
+    letter-spacing: -0.033em;
+    background: linear-gradient(to right, $slate-50, $slate-400);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+    @include respond-to('md') {
+      font-size: 3rem;
+    }
+
+    @include respond-to('lg') {
+      font-size: 3.75rem;
+    }
+  }
+
+  &__subtitle {
+    color: $emerald-400;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-medium;
+
+    @include respond-to('md') {
+      font-size: $font-size-xl;
+    }
+  }
+
+  &__description {
+    color: $text-secondary;
+    max-width: 32rem;
+    line-height: 1.7;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-md;
+    padding-top: 0.5rem;
+    justify-content: center;
+
+    @include respond-to('md') {
+      justify-content: flex-start;
+    }
+  }
+
+  &__image-wrapper {
+    position: relative;
+    flex-shrink: 0;
+    transition: transform 300ms ease;
+
+    &:hover {
+      .hero__image-glow {
+        opacity: 0.5;
+        transition-duration: 200ms;
+      }
+    }
+  }
+
+  &__image-glow {
+    position: absolute;
+    inset: -4px;
+    background: linear-gradient(to right, $primary-color, #3b82f6, $primary-color);
+    border-radius: 50%;
+    filter: blur(20px);
+    opacity: 0.25;
+    transition: opacity 1s ease;
+  }
+
+  &__image {
+    position: relative;
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid $surface-dark;
+    box-shadow: $shadow-2xl;
+
+    @include respond-to('md') {
+      width: 18rem;
+      height: 18rem;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    bottom: -1rem;
+    right: -1rem;
+    background-color: $surface-dark;
+    padding: 0.75rem;
+    border-radius: $border-radius-xl;
+    border: 1px solid $slate-700;
+    box-shadow: $shadow-xl;
+    display: none;
+
+    @include respond-to('md') {
+      display: block;
+    }
+
+    svg {
+      color: $primary-color;
+      width: 1.875rem;
+      height: 1.875rem;
+    }
+  }
+}
+
+// Buttons
+.btn {
+  height: 3rem;
+  padding: 0 1.5rem;
+  border-radius: $border-radius-md;
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  transition: all $transition-base;
+
+  &--primary {
+    background-color: $primary-color;
+    color: white;
+    box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.25);
+
+    &:hover {
+      background-color: $primary-hover;
+      transform: scale(1.05);
+    }
+  }
+
+  &--secondary {
+    background-color: $surface-dark;
+    border: 1px solid $slate-700;
+    color: white;
+
+    &:hover {
+      border-color: $slate-500;
+    }
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+// Tech Stack Section
+.tech-stack {
+  width: 100%;
+  padding: 0 0 5rem;
+
+  &__container {
+    padding: 0 $spacing-md;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    @include respond-to('md') {
+      padding: 0 2.5rem;
+    }
+
+    @include respond-to('lg') {
+      padding: 0 10rem;
+    }
+  }
+
+  &__content {
+    max-width: 960px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+  }
+
+  &__divider {
+    height: 1px;
+    background-color: $slate-800;
+    flex: 1;
+  }
+
+  &__title {
+    color: $text-secondary;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0 $spacing-sm;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-md;
+
+    @include respond-to('sm') {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include respond-to('md') {
+      grid-template-columns: repeat(7, 1fr);
+    }
+
+    &--small {
+      @include respond-to('md') {
+        grid-template-columns: repeat(6, 1fr);
+        width: 83.333333%;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+// Tech Card
+.tech-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: $spacing-md;
+  border-radius: $border-radius-xl;
+  background-color: $surface-dark;
+  border: 1px solid transparent;
+  transition: all $transition-base;
+  cursor: pointer;
+
+  &:hover {
+    border-color: $slate-700;
+    background-color: rgba($slate-700, 0.5);
+
+    .tech-card__logo {
+      transform: scale(1.1);
+    }
+
+    .tech-card__name {
+      color: $text-primary;
+    }
+  }
+
+  &__logo {
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: contain;
+    transition: transform $transition-base;
+  }
+
+  &__name {
+    font-size: $font-size-xs;
+    font-weight: $font-weight-medium;
+    color: $text-secondary;
+    transition: color $transition-base;
+    text-align: center;
+  }
+}

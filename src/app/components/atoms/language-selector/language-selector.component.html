@@ -1,0 +1,46 @@
+<div class="language-selector">
+  <button
+    class="language-selector__button"
+    (click)="toggleDropdown()"
+    [class.language-selector__button--active]="isOpen">
+    <span class="language-selector__code">{{ currentLanguage }}</span>
+    <svg
+      class="language-selector__icon"
+      [class.language-selector__icon--open]="isOpen"
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9"></polyline>
+    </svg>
+  </button>
+
+  <div class="language-selector__dropdown" [class.language-selector__dropdown--open]="isOpen">
+    <button
+      *ngFor="let language of languages"
+      class="language-selector__option"
+      [class.language-selector__option--active]="language.code === currentLanguage"
+      (click)="selectLanguage(language)">
+      <span class="language-selector__name">{{ language.name }}</span>
+      <svg
+        *ngIf="language.code === currentLanguage"
+        class="language-selector__check"
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    </button>
+  </div>
+</div>

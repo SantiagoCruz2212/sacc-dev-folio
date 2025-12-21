@@ -1,0 +1,109 @@
+@import '../../../../styles/abstracts/variables';
+@import '../../../../styles/abstracts/mixins';
+
+.language-selector {
+  position: relative;
+
+  &__button {
+    @include reset-button;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spacing-xs;
+    padding: $spacing-xs $spacing-sm;
+    border-radius: $border-radius-md;
+    background-color: transparent;
+    border: 1px solid $slate-700;
+    color: $text-secondary;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    transition: all $transition-base;
+    width: 70px;
+
+    &:hover {
+      background-color: rgba($slate-700, 0.3);
+      border-color: $slate-600;
+      color: $text-primary;
+    }
+
+    &--active {
+      background-color: rgba($slate-700, 0.3);
+      border-color: $primary-color;
+      color: $text-primary;
+    }
+  }
+
+  &__code {
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-sm;
+  }
+
+  &__icon {
+    transition: transform $transition-base;
+    color: $text-secondary;
+
+    &--open {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: calc(100% + $spacing-xs);
+    right: 0;
+    background-color: $surface-dark;
+    border: 1px solid $slate-700;
+    border-radius: $border-radius-md;
+    box-shadow: $shadow-xl;
+    min-width: 140px;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all $transition-base;
+    z-index: 100;
+
+    &--open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+
+  &__option {
+    @include reset-button;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    padding: $spacing-sm $spacing-md;
+    color: $text-secondary;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    transition: all $transition-fast;
+    position: relative;
+
+    &:hover {
+      background-color: rgba($slate-700, 0.5);
+      color: $text-primary;
+    }
+
+    &--active {
+      background-color: rgba($primary-color, 0.1);
+      color: $primary-color;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba($slate-700, 0.5);
+    }
+  }
+
+  &__name {
+    flex: 1;
+    text-align: left;
+  }
+
+  &__check {
+    color: $primary-color;
+  }
+}

@@ -1,0 +1,334 @@
+@import '../../../../styles/abstracts/variables';
+@import '../../../../styles/abstracts/mixins';
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  border-bottom: 1px solid $slate-800;
+  background-color: rgba($background-dark, 0.8);
+  backdrop-filter: blur(12px);
+  transition: all 300ms ease-in-out;
+
+  &__container {
+    padding: 0 $spacing-md;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    @include respond-to('md') {
+      padding: 0 2.5rem;
+    }
+
+    @include respond-to('lg') {
+      padding: 0 10rem;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: $spacing-lg;
+    max-width: 960px;
+    width: 100%;
+    padding: $spacing-md 0;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+  }
+
+  &__logo-icon {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $border-radius-sm;
+    background-color: rgba($primary-color, 0.1);
+    color: $primary-color;
+    flex-shrink: 0;
+
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  }
+
+  &__logo-text {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    line-height: 1;
+    letter-spacing: -0.015em;
+    margin: 0;
+    white-space: nowrap;
+
+    @include respond-to('sm') {
+      display: block;
+    }
+  }
+
+  &__nav {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-lg;
+
+    @include respond-to('md') {
+      display: flex;
+    }
+  }
+
+  &__nav-link {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $text-secondary;
+    transition: color $transition-base;
+    position: relative;
+    white-space: nowrap;
+    padding: $spacing-xs 0;
+
+    &:hover {
+      color: $primary-color;
+    }
+
+    &.active {
+      color: $text-primary;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -$spacing-md;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: $primary-color;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    justify-self: end;
+
+    @include respond-to('md') {
+      gap: $spacing-md;
+    }
+  }
+
+  &__language {
+    display: none;
+
+    @include respond-to('sm') {
+      display: block;
+    }
+  }
+
+  &__btn-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-xs;
+    overflow: hidden;
+    border-radius: $border-radius-md;
+    height: 2.25rem;
+    padding: 0 $spacing-md;
+    background-color: $primary-color;
+    color: white;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
+    border: none;
+    cursor: pointer;
+    transition: all $transition-base;
+    box-shadow: $shadow-primary;
+    white-space: nowrap;
+
+    &:hover {
+      background-color: $primary-hover;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px -3px rgba(16, 185, 129, 0.35);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  &__btn-text {
+    display: none;
+
+    @include respond-to('sm') {
+      display: inline;
+    }
+  }
+
+  &__btn-icon {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  &__menu-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-xs;
+    color: $text-secondary;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all $transition-base;
+    border-radius: $border-radius-sm;
+
+    @include respond-to('md') {
+      display: none;
+    }
+
+    &:hover {
+      color: $text-primary;
+      background-color: rgba($slate-700, 0.3);
+    }
+
+    &--active {
+      color: $primary-color;
+    }
+
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+
+  // Mobile Menu
+  &__mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100vh;
+    background-color: $surface-dark;
+    border-left: 1px solid $slate-800;
+    transform: translateX(100%);
+    transition: transform $transition-base;
+    z-index: 1000;
+    overflow-y: auto;
+    padding: $spacing-2xl $spacing-lg;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-2xl;
+
+    @include respond-to('md') {
+      display: none;
+    }
+
+    &--open {
+      transform: translateX(0);
+    }
+  }
+
+  &__mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+  }
+
+  &__mobile-link {
+    padding: $spacing-md;
+    color: $text-secondary;
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    border-radius: $border-radius-md;
+    transition: all $transition-base;
+    position: relative;
+
+    &:hover {
+      color: $text-primary;
+      background-color: rgba($slate-700, 0.3);
+    }
+
+    &.active {
+      color: $primary-color;
+      background-color: rgba($primary-color, 0.1);
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 3px;
+        height: 60%;
+        background-color: $primary-color;
+        border-radius: 0 $border-radius-sm $border-radius-sm 0;
+      }
+    }
+  }
+
+  &__mobile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    padding-top: $spacing-lg;
+    border-top: 1px solid $slate-800;
+  }
+
+  &__mobile-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-sm;
+    padding: $spacing-md;
+    background-color: $primary-color;
+    color: white;
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
+    border: none;
+    border-radius: $border-radius-md;
+    cursor: pointer;
+    transition: all $transition-base;
+    box-shadow: $shadow-primary;
+
+    &:hover {
+      background-color: $primary-hover;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px -3px rgba(16, 185, 129, 0.35);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+
+  // Backdrop
+  &__backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all $transition-base;
+    z-index: 999;
+
+    @include respond-to('md') {
+      display: none;
+    }
+
+    &--visible {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

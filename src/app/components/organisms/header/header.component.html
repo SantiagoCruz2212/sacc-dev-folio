@@ -1,0 +1,84 @@
+<header class="header">
+  <div class="header__container">
+    <div class="header__content">
+      <!-- Logo -->
+      <div class="header__logo">
+        <div class="header__logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
+        </div>
+        <h2 class="header__logo-text">SC</h2>
+      </div>
+
+      <!-- Navigation Desktop -->
+      <nav class="header__nav">
+        <a routerLink="/inicio" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="header__nav-link">Inicio</a>
+        <a routerLink="/proyectos" routerLinkActive="active" class="header__nav-link">Proyectos</a>
+        <a routerLink="/experiencia" routerLinkActive="active" class="header__nav-link">Experiencia</a>
+        <a routerLink="/sobre-mi" routerLinkActive="active" class="header__nav-link">Sobre mí</a>
+        <a routerLink="/contacto" routerLinkActive="active" class="header__nav-link">Contacto</a>
+      </nav>
+
+      <!-- Actions -->
+      <div class="header__actions">
+        <app-language-selector class="header__language"></app-language-selector>
+        <button class="header__btn-primary" (click)="openCvToast()">
+          <span class="header__btn-text">Descargar CV</span>
+          <svg class="header__btn-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+        </button>
+        <button class="header__menu-mobile" (click)="toggleMobileMenu()" [class.header__menu-mobile--active]="isMobileMenuOpen">
+          <svg *ngIf="!isMobileMenuOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+          <svg *ngIf="isMobileMenuOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="header__mobile-menu" [class.header__mobile-menu--open]="isMobileMenuOpen">
+    <nav class="header__mobile-nav">
+      <a routerLink="/inicio" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="header__mobile-link" (click)="closeMobileMenu()">
+        Inicio
+      </a>
+      <a routerLink="/proyectos" routerLinkActive="active" class="header__mobile-link" (click)="closeMobileMenu()">
+        Proyectos
+      </a>
+      <a routerLink="/experiencia" routerLinkActive="active" class="header__mobile-link" (click)="closeMobileMenu()">
+        Experiencia
+      </a>
+      <a routerLink="/sobre-mi" routerLinkActive="active" class="header__mobile-link" (click)="closeMobileMenu()">
+        Sobre mí
+      </a>
+      <a routerLink="/contacto" routerLinkActive="active" class="header__mobile-link" (click)="closeMobileMenu()">
+        Contacto
+      </a>
+    </nav>
+    <div class="header__mobile-actions">
+      <app-language-selector></app-language-selector>
+      <button class="header__mobile-btn" (click)="openCvToast()">
+        Descargar CV
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Backdrop -->
+  <div class="header__backdrop" [class.header__backdrop--visible]="isMobileMenuOpen" (click)="closeMobileMenu()"></div>
+</header>

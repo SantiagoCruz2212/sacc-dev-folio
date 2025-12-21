@@ -1,0 +1,108 @@
+<!-- Experience Page -->
+<main class="experience">
+  <!-- Hero Banner -->
+  <section class="hero-banner animate-fade-in-up delay-100">
+    <div class="hero-banner__container">
+      <div class="hero-banner__background"></div>
+      <div class="hero-banner__content">
+        <div class="hero-banner__badge">
+          <span class="hero-banner__badge-ping"></span>
+          <span class="hero-banner__badge-text">Open to Work</span>
+        </div>
+        <h1 class="hero-banner__title">Trayectoria Profesional</h1>
+        <p class="hero-banner__description">
+          De Junior Dev a Arquitecto Fullstack. Más de 5 años construyendo soluciones escalables, liderando equipos y aprendiendo continuamente.
+        </p>
+        <div class="hero-banner__actions">
+          <button class="hero-banner__btn hero-banner__btn--primary">
+            Descargar CV completo
+          </button>
+          <button class="hero-banner__btn hero-banner__btn--secondary">
+            Ver LinkedIn
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Header -->
+  <div class="experience__section-header animate-fade-in-up delay-200">
+    <h2 class="experience__section-title">Experiencia Laboral</h2>
+  </div>
+
+  <!-- Timeline -->
+  <section class="timeline">
+    <div class="timeline__line"></div>
+
+    <div *ngFor="let exp of experiences; let i = index" class="timeline__item"
+         [class.delay-300]="i === 0"
+         [class.delay-400]="i === 1"
+         [class.delay-500]="i === 2">
+      <!-- Icon -->
+      <div class="timeline__icon-wrapper animate-fade-in-up">
+        <div class="timeline__icon" [class.timeline__icon--active]="exp.isCurrent">
+          <span class="material-symbols-outlined">{{ exp.icon }}</span>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="timeline__content animate-fade-in-left" [class.timeline__content--active]="exp.isCurrent">
+        <div class="timeline__card">
+          <div class="timeline__card-glow"></div>
+          <div class="timeline__card-header">
+            <div class="timeline__card-info">
+              <h3 class="timeline__card-title">{{ exp.title }}</h3>
+              <div class="timeline__card-company">
+                <span class="material-symbols-outlined">domain</span>
+                <span>{{ exp.company }}</span>
+              </div>
+            </div>
+            <div class="timeline__card-period" [class.timeline__card-period--active]="exp.isCurrent">
+              {{ exp.period }}
+            </div>
+          </div>
+          <p class="timeline__card-description">{{ exp.description }}</p>
+          <div class="timeline__card-technologies">
+            <span *ngFor="let tech of exp.technologies" class="timeline__card-tech">
+              {{ tech }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section Header -->
+  <div class="experience__section-header experience__section-header--education animate-fade-in-up delay-300">
+    <h2 class="experience__section-title">Educación y Certificaciones</h2>
+    <p class="experience__section-subtitle">Validación continua de habilidades técnicas y teóricas.</p>
+  </div>
+
+  <!-- Education Grid -->
+  <section class="education animate-scale-in delay-300">
+    <div class="education__grid">
+      <div *ngFor="let edu of education; let i = index" class="education__card">
+        <div class="education__card-glow"></div>
+        <div class="education__card-content">
+          <div class="education__card-icon" [style.background-color]="edu.iconBgColor">
+            <span class="material-symbols-outlined" [style.color]="edu.iconColor">{{ edu.icon }}</span>
+          </div>
+          <h3 class="education__card-title">{{ edu.title }}</h3>
+          <p class="education__card-institution">{{ edu.institution }}</p>
+          <p class="education__card-date">{{ edu.date }}</p>
+        </div>
+        <div class="education__card-footer">
+          <span *ngIf="edu.credentialId" class="education__card-id">ID: {{ edu.credentialId }}</span>
+          <span *ngIf="edu.status" class="education__card-status">
+            <span class="material-symbols-outlined">check_circle</span>
+            {{ edu.status }}
+          </span>
+          <a *ngIf="edu.link" [href]="edu.link" class="education__card-link">
+            Ver Credencial
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

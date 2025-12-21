@@ -1,0 +1,169 @@
+<!-- Projects Page -->
+<main class="projects">
+  <div class="projects__container">
+    <div class="projects__content">
+      <!-- Header Section -->
+      <div class="projects__header animate-fade-in-up">
+        <h1 class="projects__title">
+          Mis <span class="projects__title-highlight">Proyectos</span>
+        </h1>
+        <p class="projects__description">
+          Explora una colección de mis trabajos más recientes en desarrollo web y móvil. Desde interfaces interactivas hasta arquitecturas backend robustas, diseñadas con precisión.
+        </p>
+      </div>
+
+      <!-- Filters -->
+      <div class="projects__filters-wrapper animate-fade-in-up-delay">
+        <div class="projects__filters">
+          <button
+            *ngFor="let filter of filters"
+            class="filter-btn"
+            [class.filter-btn--active]="selectedFilter === filter.id"
+            (click)="selectFilter(filter.id)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect *ngIf="filter.icon === 'grid_view'" x="3" y="3" width="7" height="7"></rect>
+              <rect *ngIf="filter.icon === 'grid_view'" x="14" y="3" width="7" height="7"></rect>
+              <rect *ngIf="filter.icon === 'grid_view'" x="14" y="14" width="7" height="7"></rect>
+              <rect *ngIf="filter.icon === 'grid_view'" x="3" y="14" width="7" height="7"></rect>
+              <rect *ngIf="filter.icon === 'desktop_windows'" x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line *ngIf="filter.icon === 'desktop_windows'" x1="8" y1="21" x2="16" y2="21"></line>
+              <line *ngIf="filter.icon === 'desktop_windows'" x1="12" y1="17" x2="12" y2="21"></line>
+              <ellipse *ngIf="filter.icon === 'database'" cx="12" cy="5" rx="9" ry="3"></ellipse>
+              <path *ngIf="filter.icon === 'database'" d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+              <path *ngIf="filter.icon === 'database'" d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+              <polygon *ngIf="filter.icon === 'layers'" points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline *ngIf="filter.icon === 'layers'" points="2 17 12 22 22 17"></polyline>
+              <polyline *ngIf="filter.icon === 'layers'" points="2 12 12 17 22 12"></polyline>
+            </svg>
+            <span>{{ filter.label }}</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects__grid">
+        <article
+          *ngFor="let project of filteredProjects"
+          class="project-card animate-fade-in-up"
+          [style.animation-delay.ms]="project.delay"
+          (click)="openProjectModal(project)">
+          <!-- Project Image -->
+          <div class="project-card__image-wrapper">
+            <div
+              class="project-card__image"
+              [style.background-image]="'url(' + project.image + ')'">
+            </div>
+            <div class="project-card__overlay"></div>
+            <div class="project-card__badge">
+              <span>{{ project.category }}</span>
+            </div>
+            <div class="project-card__hover">
+              <span class="project-card__hover-text">Ver detalles</span>
+            </div>
+          </div>
+
+          <!-- Project Info -->
+          <div class="project-card__content">
+            <div class="project-card__header">
+              <h3 class="project-card__title">{{ project.title }}</h3>
+              <svg class="project-card__arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </div>
+            <p class="project-card__description">
+              {{ project.description }}
+            </p>
+            <div class="project-card__technologies">
+              <span
+                *ngFor="let tech of project.technologies"
+                class="project-card__tech-tag">
+                {{ tech }}
+              </span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Project Modal -->
+<div *ngIf="isModalOpen && selectedProject" class="modal" (click)="closeModal()">
+  <div class="modal__dialog" (click)="$event.stopPropagation()">
+    <!-- Close Button -->
+    <button class="modal__close" (click)="closeModal()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+    <div class="modal__content">
+      <!-- Image Section -->
+      <div class="modal__image-section">
+        <div
+          class="modal__image"
+          [style.background-image]="'url(' + selectedProject.detailImage + ')'">
+        </div>
+        <div class="modal__image-overlay"></div>
+      </div>
+
+      <!-- Info Section -->
+      <div class="modal__info-section">
+        <div class="modal__header">
+          <div class="modal__meta">
+            <span class="modal__category">{{ selectedProject.category }}</span>
+            <span class="modal__date">{{ selectedProject.date }}</span>
+          </div>
+          <h2 class="modal__title">{{ selectedProject.title }}</h2>
+        </div>
+
+        <div class="modal__description">
+          <p *ngFor="let paragraph of selectedProject.detailedDescription">
+            {{ paragraph }}
+          </p>
+        </div>
+
+        <div class="modal__technologies">
+          <h4 class="modal__tech-title">
+            <span class="modal__tech-indicator"></span>
+            Tecnologías
+          </h4>
+          <div class="modal__tech-tags">
+            <span
+              *ngFor="let tech of selectedProject.detailedTechnologies"
+              class="modal__tech-tag">
+              {{ tech }}
+            </span>
+          </div>
+        </div>
+
+        <div class="modal__actions">
+          <a
+            [href]="selectedProject.demoUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="modal__btn modal__btn--primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polygon points="10 8 16 12 10 16 10 8"></polygon>
+            </svg>
+            Ver Demo
+          </a>
+          <a
+            [href]="selectedProject.repoUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="modal__btn modal__btn--secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+            Código
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

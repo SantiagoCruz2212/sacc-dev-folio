@@ -1,0 +1,80 @@
+// CSS Reset básico
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: $font-family-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-regular;
+  line-height: 1.6;
+  color: $text-primary;
+  background-color: $background-dark;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Estilos de scrollbar personalizado
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $background-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $slate-700;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $primary-color;
+}
+
+// Estilos de selección de texto
+::selection {
+  background-color: $primary-color;
+  color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: $font-weight-semibold;
+  line-height: 1.2;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
