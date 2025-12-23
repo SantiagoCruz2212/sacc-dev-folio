@@ -13,6 +13,7 @@ export interface GitHubRepo {
   language: string | null;
   stargazers_count: number;
   forks_count: number;
+  size: number;
   created_at: string;
   updated_at: string;
   pushed_at: string;
@@ -38,6 +39,8 @@ export interface Project {
   detailImage: string;
   stars: number;
   forks: number;
+  size: number;
+  language: string | null;
 }
 
 @Injectable({
@@ -79,8 +82,7 @@ export class GithubService {
       technologies: technologies.slice(0, 3), // Mostrar solo las primeras 3
       delay: (index % 6 + 3) * 100, // Delays entre 300ms y 800ms
       detailedDescription: [
-        repo.description || 'Proyecto de desarrollo de software',
-        `Este proyecto fue creado usando ${repo.language || 'múltiples tecnologías'} y cuenta con ${repo.stargazers_count} estrellas y ${repo.forks_count} forks en GitHub.`
+        repo.description || 'Proyecto de desarrollo de software'
       ],
       detailedTechnologies: technologies,
       date: this.formatDate(repo.updated_at),
@@ -88,7 +90,9 @@ export class GithubService {
       demoUrl: repo.homepage || repo.html_url,
       detailImage: image,
       stars: repo.stargazers_count,
-      forks: repo.forks_count
+      forks: repo.forks_count,
+      size: repo.size,
+      language: repo.language
     };
   }
 

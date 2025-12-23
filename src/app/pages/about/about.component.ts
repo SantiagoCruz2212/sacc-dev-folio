@@ -24,7 +24,7 @@ export class AboutComponent {
   profileInfo = {
     name: 'Santiago Andres',
     title: 'Desarrollador Fullstack Senior',
-    description: 'Apasionado por crear soluciones eficientes y escalables que resuelvan problemas reales. Transformo café en código limpio y experiencias de usuario memorables.',
+    description: 'Apasionado por crear soluciones eficientes y escalables que resuelvan problemas reales, colaborando en cada etapa del proyecto.',
     location: 'Cali, Colombia',
     available: true,
     imageUrl: 'images/profile/Santiago.jpg'

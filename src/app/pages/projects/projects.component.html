@@ -8,7 +8,7 @@
           Mis <span class="projects__title-highlight">Proyectos</span>
         </h1>
         <p class="projects__description">
-          Explora una colección de mis trabajos más recientes en desarrollo web y móvil. Desde interfaces interactivas hasta arquitecturas backend robustas, diseñadas con precisión.
+          Explora una colección de mis trabajos más recientes en desarrollo web y móvil.
         </p>
       </div>
 
@@ -140,6 +140,41 @@
           <p *ngFor="let paragraph of selectedProject.detailedDescription">
             {{ paragraph }}
           </p>
+        </div>
+
+        <!-- GitHub Stats -->
+        <div class="modal__stats">
+          <div class="modal__stat">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+            </svg>
+            <span class="modal__stat-value">{{ selectedProject.stars }}</span>
+            <span class="modal__stat-label">Stars</span>
+          </div>
+          <div class="modal__stat">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M12 1v6m0 6v6"></path>
+              <path d="M17 7l-5 5-5-5"></path>
+            </svg>
+            <span class="modal__stat-value">{{ selectedProject.forks }}</span>
+            <span class="modal__stat-label">Forks</span>
+          </div>
+          <div class="modal__stat">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+            </svg>
+            <span class="modal__stat-value">{{ formatRepoSize(selectedProject.size) }}</span>
+            <span class="modal__stat-label">Size</span>
+          </div>
+          <div class="modal__stat" *ngIf="selectedProject.language">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+            <span class="modal__stat-value">{{ selectedProject.language }}</span>
+            <span class="modal__stat-label">Language</span>
+          </div>
         </div>
 
         <div class="modal__technologies">

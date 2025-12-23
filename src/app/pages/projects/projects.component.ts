@@ -75,4 +75,12 @@ export class ProjectsComponent implements OnInit {
     this.selectedProject = null;
     document.body.style.overflow = '';
   }
+
+  formatRepoSize(sizeInKB: number): string {
+    if (sizeInKB < 1024) {
+      return `${sizeInKB} KB`;
+    }
+    const sizeInMB = (sizeInKB / 1024).toFixed(1);
+    return `${sizeInMB} MB`;
+  }
 }
