@@ -5,26 +5,25 @@
       <!-- Text Content -->
       <div class="hero__text animate-fade-in-up">
         <div class="hero__titles">
-          <h1 class="hero__title">
-            Santiago Andrés<br/>Castro Cruz
+          <h1 class="hero__title" [innerHTML]="'home.title' | translate">
           </h1>
           <h2 class="hero__subtitle">
-            De la idea al despliegue
+            {{ 'home.subtitle' | translate }}
           </h2>
         </div>
         <p class="hero__description">
-          Apasionado por transformar ideas en soluciones digitales. Me especializo en el desarrollo de plataformas web y apps móviles bajo una estética minimalista, priorizando siempre la simplicidad y la facilidad de uso.
+          {{ 'home.description' | translate }}
         </p>
         <div class="hero__actions">
           <button class="btn btn--primary" (click)="navigateToProjects()">
-            <span>Ver Proyectos</span>
+            <span>{{ 'home.view-projects' | translate }}</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
           </button>
           <button class="btn btn--secondary" (click)="navigateToContact()">
-            <span>Contactar</span>
+            <span>{{ 'home.contact' | translate }}</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
               <polyline points="22,6 12,13 2,6"></polyline>
@@ -53,7 +52,7 @@
     <div class="tech-stack__content">
       <div class="tech-stack__header">
         <div class="tech-stack__divider"></div>
-        <h3 class="tech-stack__title">Tech Stack</h3>
+        <h3 class="tech-stack__title">{{ 'home.tech-stack' | translate }}</h3>
         <div class="tech-stack__divider"></div>
       </div>
 

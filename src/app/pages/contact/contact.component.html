@@ -13,18 +13,16 @@
           <!-- Available Badge -->
           <div class="contact__badge">
             <span class="contact__badge-ping"></span>
-            <span class="contact__badge-text">Disponible para nuevos proyectos</span>
+            <span class="contact__badge-text">{{ 'contact.available' | translate }}</span>
           </div>
 
           <!-- Title -->
-          <h1 class="contact__title">
-            Trabajemos juntos en tu
-            <span class="contact__title-gradient">próxima idea</span>
+          <h1 class="contact__title" [innerHTML]="'contact.title-full' | translate">
           </h1>
 
           <!-- Description -->
           <p class="contact__description">
-            ¿Tienes un proyecto en mente o simplemente quieres saludar? Estoy especializado en crear experiencias digitales, limpias y escalables.
+            {{ 'contact.description' | translate }}
           </p>
         </div>
 
@@ -46,7 +44,7 @@
               class="email-card__copy-btn"
               [class.email-card__copy-btn--copied]="emailCopied"
               (click)="copyEmail()"
-              [title]="emailCopied ? 'Copiado!' : 'Copiar email'"
+              [title]="(emailCopied ? 'contact.email-copied' : 'contact.copy-email') | translate"
               type="button">
               <span class="material-symbols-outlined">
                 {{ emailCopied ? 'check' : 'content_copy' }}
@@ -58,7 +56,7 @@
 
         <!-- Social Links -->
         <div class="social-links">
-          <h3 class="social-links__title">Sígueme en redes</h3>
+          <h3 class="social-links__title">{{ 'contact.social' | translate }}</h3>
           <div class="social-links__grid">
             <a
               *ngFor="let social of socialLinks"
@@ -85,37 +83,37 @@
       <!-- Right Column - Form -->
       <div class="contact__form-wrapper">
         <div class="contact-form">
-          <h2 class="contact-form__title">Envíame un mensaje</h2>
+          <h2 class="contact-form__title">{{ 'contact.form-title' | translate }}</h2>
           <form (ngSubmit)="onSubmit()" class="contact-form__form">
             <!-- Name and Email Row -->
             <div class="contact-form__row">
               <div class="form-field">
-                <label for="name" class="form-field__label">Nombre</label>
+                <label for="name" class="form-field__label">{{ 'contact.name' | translate }}</label>
                 <input
                   type="text"
                   id="name"
                   name="name"
                   [(ngModel)]="formData.name"
                   class="form-field__input"
-                  placeholder="Tu nombre"
+                  [placeholder]="'contact.name-placeholder' | translate"
                   required>
               </div>
               <div class="form-field">
-                <label for="email" class="form-field__label">Correo electrónico</label>
+                <label for="email" class="form-field__label">{{ 'contact.email' | translate }}</label>
                 <input
                   type="email"
                   id="email"
                   name="email"
                   [(ngModel)]="formData.email"
                   class="form-field__input"
-                  placeholder="ejemplo@correo.com"
+                  [placeholder]="'contact.email-placeholder' | translate"
                   required>
               </div>
             </div>
 
             <!-- Subject -->
             <div class="form-field">
-              <label for="subject" class="form-field__label">Asunto</label>
+              <label for="subject" class="form-field__label">{{ 'contact.subject' | translate }}</label>
               <div class="form-field__select-wrapper">
                 <select
                   id="subject"
@@ -127,7 +125,7 @@
                     *ngFor="let option of subjectOptions"
                     [value]="option.value"
                     [disabled]="option.disabled">
-                    {{ option.label }}
+                    {{ option.labelKey | translate }}
                   </option>
                 </select>
                 <span class="form-field__select-icon">
@@ -138,13 +136,13 @@
 
             <!-- Message -->
             <div class="form-field">
-              <label for="message" class="form-field__label">Mensaje</label>
+              <label for="message" class="form-field__label">{{ 'contact.message' | translate }}</label>
               <textarea
                 id="message"
                 name="message"
                 [(ngModel)]="formData.message"
                 class="form-field__textarea"
-                placeholder="Cuéntame sobre tu proyecto..."
+                [placeholder]="'contact.message-placeholder' | translate"
                 rows="5"
                 required></textarea>
             </div>
@@ -155,7 +153,7 @@
               class="contact-form__submit"
               [disabled]="!isFormValid()">
               <span class="contact-form__submit-text">
-                Enviar mensaje
+                {{ 'contact.send' | translate }}
                 <span class="material-symbols-outlined">send</span>
               </span>
             </button>

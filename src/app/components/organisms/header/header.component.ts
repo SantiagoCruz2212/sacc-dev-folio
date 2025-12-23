@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 import { LanguageSelectorComponent } from '../../atoms/language-selector/language-selector.component';
 import { CvDownloadService } from '../../../shared/services/cv-download.service';
 
 @Component({
   selector: 'app-header',
-  imports: [CommonModule, RouterLink, RouterLinkActive, LanguageSelectorComponent],
+  imports: [CommonModule, RouterLink, RouterLinkActive, LanguageSelectorComponent, TranslateModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })

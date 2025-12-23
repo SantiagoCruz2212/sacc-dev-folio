@@ -3,9 +3,9 @@
   <!-- Header Section -->
   <section class="about__header">
     <div class="about__header-content">
-      <h1 class="about__title">Sobre Mí</h1>
+      <h1 class="about__title">{{ 'about.page-title' | translate }}</h1>
       <p class="about__subtitle">
-        Un vistazo profundo a la persona detrás del código, mis motivaciones y lo que me impulsa a crear.
+        {{ 'about.page-subtitle' | translate }}
       </p>
     </div>
   </section>
@@ -22,55 +22,55 @@
       </div>
       <div class="profile-card__content">
         <div class="profile-card__header">
-          <h2 class="profile-card__name">Hola, soy {{ profileInfo.name }}</h2>
+          <h2 class="profile-card__name">{{ 'about.greeting' | translate }} {{ profileInfo.name }}</h2>
           <span class="profile-card__badge" *ngIf="profileInfo.available">
             <span class="profile-card__badge-ping"></span>
-            <span class="profile-card__badge-text">Disponible</span>
+            <span class="profile-card__badge-text">{{ 'about.available' | translate }}</span>
           </span>
         </div>
-        <p class="profile-card__title">{{ profileInfo.title }}</p>
-        <p class="profile-card__description">{{ profileInfo.description }}</p>
+        <p class="profile-card__title">{{ profileInfo.titleKey | translate }}</p>
+        <p class="profile-card__description">{{ profileInfo.descriptionKey | translate }}</p>
         <div class="profile-card__location">
           <span class="material-symbols-outlined">location_on</span>
-          <span>{{ profileInfo.location }}</span>
+          <span>{{ profileInfo.locationKey | translate }}</span>
         </div>
       </div>
     </section>
 
     <!-- Motivation Section -->
     <section class="about__section">
-      <h3 class="about__section-title">Mi Motivación</h3>
+      <h3 class="about__section-title">{{ 'about.motivation-title' | translate }}</h3>
       <div class="about__section-content">
-        <p *ngFor="let motivation of motivations" class="about__paragraph">
-          {{ motivation }}
+        <p *ngFor="let motivationKey of motivationKeys" class="about__paragraph">
+          {{ motivationKey | translate }}
         </p>
       </div>
     </section>
 
     <!-- Soft Skills Section -->
     <section class="about__section">
-      <h3 class="about__section-title">Soft Skills</h3>
+      <h3 class="about__section-title">{{ 'about.soft-skills-title' | translate }}</h3>
       <div class="skills-grid">
         <div *ngFor="let skill of softSkills" class="skill-card">
           <div class="skill-card__icon-wrapper">
             <span class="material-symbols-outlined">{{ skill.icon }}</span>
           </div>
-          <p class="skill-card__name">{{ skill.name }}</p>
+          <p class="skill-card__name">{{ skill.name | translate }}</p>
         </div>
       </div>
     </section>
 
     <!-- Hobbies Section -->
     <section class="about__section">
-      <h3 class="about__section-title">Pasatiempos</h3>
+      <h3 class="about__section-title">{{ 'about.hobbies-title' | translate }}</h3>
       <div class="hobbies-grid">
         <div *ngFor="let hobby of hobbies" class="hobby-card">
           <div class="hobby-card__icon-wrapper">
             <span class="material-symbols-outlined">{{ hobby.icon }}</span>
           </div>
           <div class="hobby-card__content">
-            <h4 class="hobby-card__title">{{ hobby.title }}</h4>
-            <p class="hobby-card__description">{{ hobby.description }}</p>
+            <h4 class="hobby-card__title">{{ hobby.titleKey | translate }}</h4>
+            <p class="hobby-card__description">{{ hobby.descriptionKey | translate }}</p>
           </div>
         </div>
       </div>

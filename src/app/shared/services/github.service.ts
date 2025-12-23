@@ -136,11 +136,6 @@ export class GithubService {
   private getTechnologies(repo: GitHubRepo): string[] {
     const technologies: string[] = [];
 
-    // Agregar lenguaje principal
-    if (repo.language) {
-      technologies.push(repo.language);
-    }
-
     // Agregar topics como tecnologías
     const relevantTopics = repo.topics.filter(topic => {
       const tech = topic.toLowerCase();

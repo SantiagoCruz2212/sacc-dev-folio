@@ -1,0 +1,180 @@
+{
+  "header": {
+    "inicio": "Inicio",
+    "sobre-mi": "Sobre Mí",
+    "experiencia": "Experiencia",
+    "proyectos": "Proyectos",
+    "contacto": "Contacto"
+  },
+  "home": {
+    "title": "Santiago Andrés<br/>Castro Cruz",
+    "subtitle": "De la idea al despliegue",
+    "description": "Apasionado por transformar ideas en soluciones digitales. Me especializo en el desarrollo de plataformas web y apps móviles bajo una estética minimalista, priorizando siempre la simplicidad y la facilidad de uso.",
+    "view-projects": "Ver Proyectos",
+    "contact": "Contactar",
+    "tech-stack": "Tech Stack"
+  },
+  "about": {
+    "title": "Sobre",
+    "highlight": "Mí",
+    "page-title": "Sobre Mí",
+    "page-subtitle": "Un vistazo profundo a la persona detrás del código, mis motivaciones y lo que me impulsa a crear.",
+    "greeting": "Hola, soy",
+    "available": "Disponible",
+    "profile-title": "Desarrollador Fullstack Senior",
+    "profile-description": "Apasionado por crear soluciones eficientes y escalables que resuelvan problemas reales, colaborando en cada etapa del proyecto.",
+    "location": "Cali, Colombia",
+    "motivation-title": "Mi Motivación",
+    "motivation-1": "Desarrollador apasionado por crear herramientas digitales que impacten positivamente en la vida de las personas. Mi motivación nace de la capacidad de las computadoras para generar experiencias únicas y útiles. Con una trayectoria que abarca desde startups hasta corporaciones, he perfeccionado el equilibrio entre la velocidad de entrega y la excelencia estética.",
+    "motivation-2": "Me distingo por mi capacidad para unir el diseño funcional con una comunicación clara, asegurando que el cliente comprenda el proceso y reciba un producto final que supere sus expectativas en cuanto a usabilidad y servicio.",
+    "soft-skills-title": "Soft Skills",
+    "skill-communication": "Comunicación",
+    "skill-problem-solving": "Resolución",
+    "skill-teamwork": "Trabajo en Equipo",
+    "skill-adaptability": "Adaptabilidad",
+    "skill-leadership": "Liderazgo",
+    "hobbies-title": "Pasatiempos",
+    "hobbies-subtitle": "Más allá del código",
+    "hobby1-title": "Nuevas Tecnologías",
+    "hobby1-description": "Explorando constantemente las últimas tendencias en desarrollo y herramientas emergentes.",
+    "hobby2-title": "Música",
+    "hobby2-description": "Disfruto de diversos géneros musicales y ocasionalmente experimento con instrumentos.",
+    "hobby3-title": "Deportes de Motor",
+    "hobby3-description": "Fascinado por la ingeniería automotriz y el mundo de las carreras.",
+    "hobby4-title": "Electrónica",
+    "hobby4-description": "Experimentando con circuitos, microcontroladores y proyectos DIY.",
+    "hobby5-title": "Natación y Naturaleza",
+    "hobby5-description": "Conectando con el aire libre a través de la natación y actividades al aire libre.",
+    "hobby6-title": "Cine",
+    "hobby6-description": "Apreciando la narrativa visual y el arte cinematográfico.",
+    "hobby7-title": "Gastronomía",
+    "hobby7-description": "Explorando diferentes cocinas y experimentando con nuevas recetas."
+  },
+  "projects": {
+    "title": "Mis",
+    "highlight": "Proyectos",
+    "description": "Explora una colección de mis trabajos más recientes en desarrollo web y móvil.",
+    "filter-all": "Todos",
+    "filter-web": "Web",
+    "filter-backend": "Backend",
+    "filter-fullstack": "Full Stack",
+    "loading": "Cargando proyectos desde GitHub...",
+    "error": "Error al cargar los proyectos",
+    "retry": "Reintentar",
+    "view-details": "Ver detalles",
+    "modal": {
+      "stars": "Stars",
+      "forks": "Forks",
+      "size": "Size",
+      "technologies": "Tecnologías",
+      "view-demo": "Ver Demo",
+      "code": "Código"
+    }
+  },
+  "contact": {
+    "title": "Trabajemos",
+    "highlight": "Juntos",
+    "title-full": "Trabajemos juntos en tu<br><span class=\"contact__title-gradient\">próxima idea</span>",
+    "available": "Disponible para nuevos proyectos",
+    "description": "¿Tienes un proyecto en mente o simplemente quieres saludar? Estoy especializado en crear experiencias digitales, limpias y escalables.",
+    "form-title": "Envíame un mensaje",
+    "name": "Nombre",
+    "name-placeholder": "Tu nombre",
+    "email": "Correo electrónico",
+    "email-placeholder": "ejemplo@correo.com",
+    "subject": "Asunto",
+    "subject-select": "Selecciona un motivo",
+    "subject-freelance": "Proyecto Freelance",
+    "subject-job": "Oportunidad Laboral",
+    "subject-collab": "Colaboración",
+    "subject-other": "Otro",
+    "message": "Mensaje",
+    "message-placeholder": "Cuéntame sobre tu proyecto...",
+    "send": "Enviar mensaje",
+    "sending": "Enviando...",
+    "success": "Mensaje enviado con éxito",
+    "error": "Error al enviar el mensaje",
+    "social": "Sígueme en redes",
+    "download-cv": "Descargar CV",
+    "copy-email": "Copiar email",
+    "email-copied": "¡Copiado!"
+  },
+  "experience": {
+    "title": "Mi",
+    "highlight": "Experiencia",
+    "description": "Un recorrido por mi trayectoria profesional y académica.",
+    "badge": "Open to Work",
+    "banner-title": "Trayectoria Profesional",
+    "banner-description": "Más de 5 años construyendo soluciones escalables, apoyando equipos y aprendiendo continuamente.",
+    "download-cv": "Descargar CV",
+    "view-linkedin": "Ver LinkedIn",
+    "work-experience-title": "Experiencia Laboral",
+    "education-title": "Educación y Certificaciones",
+    "education-subtitle": "Validación continua de habilidades técnicas y teóricas.",
+    "view-credential": "Ver Credencial",
+    "jobs": {
+      "technical-lead": {
+        "title": "Líder Técnico",
+        "company": "Codesa",
+        "period": "Dic 2024 - Nov 2025",
+        "description": "Liderazgo al equipo en la resolución de problemas críticos en el sistema central biométrico, asegurando el funcionamiento del sistema. Planificación y dirección del desarrollo de nuevas arquitecturas para sistemas/aplicativos, mejorando la escalabilidad, seguridad y modularidad. Implementación de micro-frontends para aplicaciones escalables y mantenibles, diseñando componentes reutilizables."
+      },
+      "frontend-dev": {
+        "title": "Desarrollador Frontend",
+        "company": "Codesa",
+        "period": "Jul 2023 - Nov 2025",
+        "description": "Creación y optimización de interfaces de usuario responsive con React, Angular y Flutter, utilizando librerías como PrimeNG, Tailwind CSS, Angular Material, Material UI. Implementación de micro-frontends para aplicaciones escalables y mantenibles, diseñando componentes reutilizables. Liderazgo en la implementación de buenas prácticas de seguridad, asegurando el cumplimiento de los estándares de la industria."
+      },
+      "web-dev-designer": {
+        "title": "Desarrollador/Diseñador web",
+        "company": "Freelance",
+        "period": "Mar 2023 - Ene 2024",
+        "description": "Realización de análisis de mercado para identificar oportunidades de mejora y generación de valor. Diseño de interfaces web y móviles intuitivas, enfocadas en la usabilidad y la experiencia del usuario, basadas en los análisis de requerimientos. Desarrollo integral de aplicaciones web, desde la arquitectura hasta la implementación, para soluciones escalables."
+      },
+      "software-dev": {
+        "title": "Desarrollador de Software",
+        "company": "Optima Corporation",
+        "period": "Mar 2021 - Mar 2023",
+        "description": "Desarrollo de aplicativos web con Angular y React, utilizando librerías Angular Material, Tailwind CSS. Participación en todas las etapas de los proyectos desde el análisis de requerimientos hasta la implementación y despliegue. Diseñador de los aplicativos/productos para aplicar mejoras en la usabilidad y experiencia del usuario."
+      }
+    },
+    "education-items": {
+      "systems-engineering": {
+        "title": "Ingeniería de Sistemas",
+        "institution": "Universidad Santiago de Cali (USC)",
+        "date": "2017B - 2026A",
+        "status": "Proceso de grado"
+      },
+      "angular-frontend": {
+        "title": "Frontend con Angular",
+        "institution": "Platzi Academy",
+        "date": "Aprobado: 27 Enero, 2023 • Sin expiración"
+      },
+      "angular-advanced": {
+        "title": "Frontend a profundidad con Angular",
+        "institution": "Platzi Academy",
+        "date": "Aprobado: 31 Enero, 2023 • Sin expiración"
+      },
+      "html-css": {
+        "title": "HTML y CSS desde cero",
+        "institution": "Platzi Academy",
+        "date": "Aprobado: 2 Febrero, 2023 • Sin expiración"
+      },
+      "ux-ui": {
+        "title": "Trabaja como UX/UI Designer",
+        "institution": "Platzi Academy",
+        "date": "Aprobado: 6 Febrero, 2023 • Sin expiración"
+      },
+      "product-designer": {
+        "title": "Product Designer",
+        "institution": "Platzi Academy",
+        "date": "Aprobado: 23 Febrero, 2023 • Sin expiración"
+      }
+    }
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados",
+    "made-with": "Hecho con",
+    "in": "en"
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "header": {
+    "inicio": "Home",
+    "sobre-mi": "About Me",
+    "experiencia": "Experience",
+    "proyectos": "Projects",
+    "contacto": "Contact"
+  },
+  "home": {
+    "title": "Santiago Andrés<br/>Castro Cruz",
+    "subtitle": "From idea to deployment",
+    "description": "Passionate about transforming ideas into digital solutions. I specialize in developing web platforms and mobile apps with a minimalist aesthetic, always prioritizing simplicity and ease of use.",
+    "view-projects": "View Projects",
+    "contact": "Contact",
+    "tech-stack": "Tech Stack"
+  },
+  "about": {
+    "title": "About",
+    "highlight": "Me",
+    "page-title": "About Me",
+    "page-subtitle": "A deep look at the person behind the code, my motivations and what drives me to create.",
+    "greeting": "Hi, I'm",
+    "available": "Available",
+    "profile-title": "Senior Fullstack Developer",
+    "profile-description": "Passionate about creating efficient and scalable solutions that solve real problems, collaborating at every stage of the project.",
+    "location": "Cali, Colombia",
+    "motivation-title": "My Motivation",
+    "motivation-1": "A developer passionate about creating digital tools that positively impact people's lives. My motivation stems from the ability of computers to generate unique and useful experiences. With a career spanning from startups to corporations, I have perfected the balance between delivery speed and aesthetic excellence.",
+    "motivation-2": "I stand out for my ability to unite functional design with clear communication, ensuring that the client understands the process and receives a final product that exceeds their expectations in terms of usability and service.",
+    "soft-skills-title": "Soft Skills",
+    "skill-communication": "Communication",
+    "skill-problem-solving": "Problem Solving",
+    "skill-teamwork": "Teamwork",
+    "skill-adaptability": "Adaptability",
+    "skill-leadership": "Leadership",
+    "hobbies-title": "Hobbies",
+    "hobbies-subtitle": "Beyond the code",
+    "hobby1-title": "New Technologies",
+    "hobby1-description": "Constantly exploring the latest trends in development and emerging tools.",
+    "hobby2-title": "Music",
+    "hobby2-description": "I enjoy various musical genres and occasionally experiment with instruments.",
+    "hobby3-title": "Motor Sports",
+    "hobby3-description": "Fascinated by automotive engineering and the world of racing.",
+    "hobby4-title": "Electronics",
+    "hobby4-description": "Experimenting with circuits, microcontrollers, and DIY projects.",
+    "hobby5-title": "Swimming and Nature",
+    "hobby5-description": "Connecting with the outdoors through swimming and outdoor activities.",
+    "hobby6-title": "Cinema",
+    "hobby6-description": "Appreciating visual storytelling and cinematic art.",
+    "hobby7-title": "Gastronomy",
+    "hobby7-description": "Exploring different cuisines and experimenting with new recipes."
+  },
+  "projects": {
+    "title": "My",
+    "highlight": "Projects",
+    "description": "Explore a collection of my most recent work in web and mobile development.",
+    "filter-all": "All",
+    "filter-web": "Web",
+    "filter-backend": "Backend",
+    "filter-fullstack": "Full Stack",
+    "loading": "Loading projects from GitHub...",
+    "error": "Error loading projects",
+    "retry": "Retry",
+    "view-details": "View details",
+    "modal": {
+      "stars": "Stars",
+      "forks": "Forks",
+      "size": "Size",
+      "technologies": "Technologies",
+      "view-demo": "View Demo",
+      "code": "Code"
+    }
+  },
+  "contact": {
+    "title": "Let's Work",
+    "highlight": "Together",
+    "title-full": "Let's work together on your<br><span class=\"contact__title-gradient\">next idea</span>",
+    "available": "Available for new projects",
+    "description": "Have a project in mind or just want to say hi? I specialize in creating clean, scalable digital experiences.",
+    "form-title": "Send me a message",
+    "name": "Name",
+    "name-placeholder": "Your name",
+    "email": "Email",
+    "email-placeholder": "example@email.com",
+    "subject": "Subject",
+    "subject-select": "Select a reason",
+    "subject-freelance": "Freelance Project",
+    "subject-job": "Job Opportunity",
+    "subject-collab": "Collaboration",
+    "subject-other": "Other",
+    "message": "Message",
+    "message-placeholder": "Tell me about your project...",
+    "send": "Send message",
+    "sending": "Sending...",
+    "success": "Message sent successfully",
+    "error": "Error sending message",
+    "social": "Follow me on social",
+    "download-cv": "Download CV",
+    "copy-email": "Copy email",
+    "email-copied": "Copied!"
+  },
+  "experience": {
+    "title": "My",
+    "highlight": "Experience",
+    "description": "A journey through my professional and academic career.",
+    "badge": "Open to Work",
+    "banner-title": "Professional Career",
+    "banner-description": "Over 5 years building scalable solutions, supporting teams and learning continuously.",
+    "download-cv": "Download CV",
+    "view-linkedin": "View LinkedIn",
+    "work-experience-title": "Work Experience",
+    "education-title": "Education and Certifications",
+    "education-subtitle": "Continuous validation of technical and theoretical skills.",
+    "view-credential": "View Credential",
+    "jobs": {
+      "technical-lead": {
+        "title": "Technical Lead",
+        "company": "Codesa",
+        "period": "Dec 2024 - Nov 2025",
+        "description": "Leading the team in resolving critical issues in the biometric core system, ensuring system functionality. Planning and directing the development of new architectures for systems/applications, improving scalability, security, and modularity. Implementing micro-frontends for scalable and maintainable applications, designing reusable components."
+      },
+      "frontend-dev": {
+        "title": "Frontend Developer",
+        "company": "Codesa",
+        "period": "Jul 2023 - Nov 2025",
+        "description": "Creating and optimizing responsive user interfaces with React, Angular and Flutter, using libraries like PrimeNG, Tailwind CSS, Angular Material, Material UI. Implementing micro-frontends for scalable and maintainable applications, designing reusable components. Leading the implementation of security best practices, ensuring compliance with industry standards."
+      },
+      "web-dev-designer": {
+        "title": "Web Developer/Designer",
+        "company": "Freelance",
+        "period": "Mar 2023 - Jan 2024",
+        "description": "Conducting market analysis to identify opportunities for improvement and value generation. Designing intuitive web and mobile interfaces, focused on usability and user experience, based on requirements analysis. Comprehensive development of web applications, from architecture to implementation, for scalable solutions."
+      },
+      "software-dev": {
+        "title": "Software Developer",
+        "company": "Optima Corporation",
+        "period": "Mar 2021 - Mar 2023",
+        "description": "Developing web applications with Angular and React, using Angular Material and Tailwind CSS libraries. Participating in all project stages from requirements analysis to implementation and deployment. Designing applications/products to apply improvements in usability and user experience."
+      }
+    },
+    "education-items": {
+      "systems-engineering": {
+        "title": "Systems Engineering",
+        "institution": "Universidad Santiago de Cali (USC)",
+        "date": "2017B - 2026A",
+        "status": "Degree in progress"
+      },
+      "angular-frontend": {
+        "title": "Frontend with Angular",
+        "institution": "Platzi Academy",
+        "date": "Approved: January 27, 2023 • No expiration"
+      },
+      "angular-advanced": {
+        "title": "Advanced Angular Frontend",
+        "institution": "Platzi Academy",
+        "date": "Approved: January 31, 2023 • No expiration"
+      },
+      "html-css": {
+        "title": "HTML and CSS from scratch",
+        "institution": "Platzi Academy",
+        "date": "Approved: February 2, 2023 • No expiration"
+      },
+      "ux-ui": {
+        "title": "Work as UX/UI Designer",
+        "institution": "Platzi Academy",
+        "date": "Approved: February 6, 2023 • No expiration"
+      },
+      "product-designer": {
+        "title": "Product Designer",
+        "institution": "Platzi Academy",
+        "date": "Approved: February 23, 2023 • No expiration"
+      }
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "made-with": "Made with",
+    "in": "in"
+  }
+}

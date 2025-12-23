@@ -11,18 +11,18 @@
 
       <!-- Navigation Desktop -->
       <nav class="header__nav">
-        <a routerLink="/inicio" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="header__nav-link">Inicio</a>
-        <a routerLink="/proyectos" routerLinkActive="active" class="header__nav-link">Proyectos</a>
-        <a routerLink="/experiencia" routerLinkActive="active" class="header__nav-link">Experiencia</a>
-        <a routerLink="/sobre-mi" routerLinkActive="active" class="header__nav-link">Sobre mí</a>
-        <a routerLink="/contacto" routerLinkActive="active" class="header__nav-link">Contacto</a>
+        <a routerLink="/inicio" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="header__nav-link">{{ 'header.inicio' | translate }}</a>
+        <a routerLink="/proyectos" routerLinkActive="active" class="header__nav-link">{{ 'header.proyectos' | translate }}</a>
+        <a routerLink="/experiencia" routerLinkActive="active" class="header__nav-link">{{ 'header.experiencia' | translate }}</a>
+        <a routerLink="/sobre-mi" routerLinkActive="active" class="header__nav-link">{{ 'header.sobre-mi' | translate }}</a>
+        <a routerLink="/contacto" routerLinkActive="active" class="header__nav-link">{{ 'header.contacto' | translate }}</a>
       </nav>
 
       <!-- Actions -->
       <div class="header__actions">
         <app-language-selector class="header__language"></app-language-selector>
         <button class="header__btn-primary" (click)="openCvToast()">
-          <span class="header__btn-text">Descargar CV</span>
+          <span class="header__btn-text">{{ 'contact.download-cv' | translate }}</span>
           <svg class="header__btn-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
             <polyline points="7 10 12 15 17 10"></polyline>
@@ -48,25 +48,25 @@
   <div class="header__mobile-menu" [class.header__mobile-menu--open]="isMobileMenuOpen">
     <nav class="header__mobile-nav">
       <a routerLink="/inicio" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="header__mobile-link" (click)="closeMobileMenu()">
-        Inicio
+        {{ 'header.inicio' | translate }}
       </a>
       <a routerLink="/proyectos" routerLinkActive="active" class="header__mobile-link" (click)="closeMobileMenu()">
-        Proyectos
+        {{ 'header.proyectos' | translate }}
       </a>
       <a routerLink="/experiencia" routerLinkActive="active" class="header__mobile-link" (click)="closeMobileMenu()">
-        Experiencia
+        {{ 'header.experiencia' | translate }}
       </a>
       <a routerLink="/sobre-mi" routerLinkActive="active" class="header__mobile-link" (click)="closeMobileMenu()">
-        Sobre mí
+        {{ 'header.sobre-mi' | translate }}
       </a>
       <a routerLink="/contacto" routerLinkActive="active" class="header__mobile-link" (click)="closeMobileMenu()">
-        Contacto
+        {{ 'header.contacto' | translate }}
       </a>
     </nav>
     <div class="header__mobile-actions">
       <app-language-selector></app-language-selector>
       <button class="header__mobile-btn" (click)="openCvToast()">
-        Descargar CV
+        {{ 'contact.download-cv' | translate }}
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
           <polyline points="7 10 12 15 17 10"></polyline>

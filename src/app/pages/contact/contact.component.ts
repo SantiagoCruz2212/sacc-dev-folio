@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 interface SocialLink {
   id: number;
@@ -17,15 +18,23 @@ interface ContactForm {
   message: string;
 }
 
+interface SubjectOption {
+  value: string;
+  labelKey: string;
+  disabled: boolean;
+}
+
 @Component({
   selector: 'app-contact',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, TranslateModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
   contactEmail = 'sacc13@outlook.es';
   emailCopied = false;
+
+  constructor(private translate: TranslateService) {}
 
   formData: ContactForm = {
     name: '',
@@ -34,12 +43,12 @@ export class ContactComponent {
     message: ''
   };
 
-  subjectOptions = [
-    { value: '', label: 'Selecciona un motivo', disabled: true },
-    { value: 'freelance', label: 'Proyecto Freelance', disabled: false },
-    { value: 'job', label: 'Oportunidad Laboral', disabled: false },
-    { value: 'collab', label: 'Colaboración', disabled: false },
-    { value: 'other', label: 'Otro', disabled: false }
+  subjectOptions: SubjectOption[] = [
+    { value: '', labelKey: 'contact.subject-select', disabled: true },
+    { value: 'freelance', labelKey: 'contact.subject-freelance', disabled: false },
+    { value: 'job', labelKey: 'contact.subject-job', disabled: false },
+    { value: 'collab', labelKey: 'contact.subject-collab', disabled: false },
+    { value: 'other', labelKey: 'contact.subject-other', disabled: false }
   ];
 
   socialLinks: SocialLink[] = [
@@ -136,7 +145,7 @@ export class ContactComponent {
 
   private getSubjectLabel(): string {
     const option = this.subjectOptions.find(opt => opt.value === this.formData.subject);
-    return option ? option.label : this.formData.subject;
+    return option ? this.translate.instant(option.labelKey) : this.formData.subject;
   }
 
   isFormValid(): boolean {

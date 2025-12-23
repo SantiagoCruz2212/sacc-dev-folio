@@ -7,18 +7,18 @@
       <div class="hero-banner__content">
         <div class="hero-banner__badge">
           <span class="hero-banner__badge-ping"></span>
-          <span class="hero-banner__badge-text">Open to Work</span>
+          <span class="hero-banner__badge-text">{{ 'experience.badge' | translate }}</span>
         </div>
-        <h1 class="hero-banner__title">Trayectoria Profesional</h1>
+        <h1 class="hero-banner__title">{{ 'experience.banner-title' | translate }}</h1>
         <p class="hero-banner__description">
-          Más de 5 años construyendo soluciones escalables, apoyando equipos y aprendiendo continuamente.
+          {{ 'experience.banner-description' | translate }}
         </p>
         <div class="hero-banner__actions">
           <button class="hero-banner__btn hero-banner__btn--primary" (click)="downloadCV()">
-            Descargar CV
+            {{ 'experience.download-cv' | translate }}
           </button>
           <button class="hero-banner__btn hero-banner__btn--secondary" (click)="openLinkedIn()">
-            Ver LinkedIn
+            {{ 'experience.view-linkedin' | translate }}
           </button>
         </div>
       </div>
@@ -27,7 +27,7 @@
 
   <!-- Section Header -->
   <div class="experience__section-header animate-fade-in-up delay-200">
-    <h2 class="experience__section-title">Experiencia Laboral</h2>
+    <h2 class="experience__section-title">{{ 'experience.work-experience-title' | translate }}</h2>
   </div>
 
   <!-- Timeline -->
@@ -51,17 +51,17 @@
           <div class="timeline__card-glow"></div>
           <div class="timeline__card-header">
             <div class="timeline__card-info">
-              <h3 class="timeline__card-title">{{ exp.title }}</h3>
+              <h3 class="timeline__card-title">{{ exp.key + '.title' | translate }}</h3>
               <div class="timeline__card-company">
                 <span class="material-symbols-outlined">domain</span>
-                <span>{{ exp.company }}</span>
+                <span>{{ exp.key + '.company' | translate }}</span>
               </div>
             </div>
             <div class="timeline__card-period" [class.timeline__card-period--active]="exp.isCurrent">
-              {{ exp.period }}
+              {{ exp.key + '.period' | translate }}
             </div>
           </div>
-          <p class="timeline__card-description">{{ exp.description }}</p>
+          <p class="timeline__card-description">{{ exp.key + '.description' | translate }}</p>
           <div class="timeline__card-technologies">
             <span *ngFor="let tech of exp.technologies" class="timeline__card-tech">
               {{ tech }}
@@ -74,8 +74,8 @@
 
   <!-- Education Section Header -->
   <div class="experience__section-header experience__section-header--education animate-fade-in-up delay-300">
-    <h2 class="experience__section-title">Educación y Certificaciones</h2>
-    <p class="experience__section-subtitle">Validación continua de habilidades técnicas y teóricas.</p>
+    <h2 class="experience__section-title">{{ 'experience.education-title' | translate }}</h2>
+    <p class="experience__section-subtitle">{{ 'experience.education-subtitle' | translate }}</p>
   </div>
 
   <!-- Education Grid -->
@@ -87,18 +87,17 @@
           <div class="education__card-icon" [style.background-color]="edu.iconBgColor">
             <span class="material-symbols-outlined" [style.color]="edu.iconColor">{{ edu.icon }}</span>
           </div>
-          <h3 class="education__card-title">{{ edu.title }}</h3>
-          <p class="education__card-institution">{{ edu.institution }}</p>
-          <p class="education__card-date">{{ edu.date }}</p>
+          <h3 class="education__card-title">{{ edu.key + '.title' | translate }}</h3>
+          <p class="education__card-institution">{{ edu.key + '.institution' | translate }}</p>
+          <p class="education__card-date">{{ edu.key + '.date' | translate }}</p>
         </div>
         <div class="education__card-footer">
-          <span *ngIf="edu.credentialId" class="education__card-id">ID: {{ edu.credentialId }}</span>
-          <span *ngIf="edu.status" class="education__card-status">
+          <span *ngIf="edu.type === 'degree'" class="education__card-status">
             <span class="material-symbols-outlined">check_circle</span>
-            {{ edu.status }}
+            {{ edu.key + '.status' | translate }}
           </span>
-          <a *ngIf="edu.link" [href]="edu.link" class="education__card-link">
-            Ver Credencial
+          <a *ngIf="edu.link" [href]="edu.link" target="_blank" rel="noopener noreferrer" class="education__card-link">
+            {{ 'experience.view-credential' | translate }}
             <span class="material-symbols-outlined">arrow_forward</span>
           </a>
         </div>

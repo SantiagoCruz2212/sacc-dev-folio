@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 import { GithubService, Project } from '../../shared/services/github.service';
 
 interface Filter {
   id: string;
-  label: string;
+  labelKey: string;
   icon: string;
 }
 
 @Component({
   selector: 'app-projects',
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })
@@ -22,10 +23,10 @@ export class ProjectsComponent implements OnInit {
   error: string | null = null;
 
   filters: Filter[] = [
-    { id: 'Todos', label: 'Todos', icon: 'grid_view' },
-    { id: 'Frontend', label: 'Frontend', icon: 'desktop_windows' },
-    { id: 'Backend', label: 'Backend', icon: 'database' },
-    { id: 'Full Stack', label: 'Full Stack', icon: 'layers' }
+    { id: 'Todos', labelKey: 'projects.filter-all', icon: 'grid_view' },
+    { id: 'Frontend', labelKey: 'projects.filter-web', icon: 'desktop_windows' },
+    { id: 'Backend', labelKey: 'projects.filter-backend', icon: 'database' },
+    { id: 'Full Stack', labelKey: 'projects.filter-fullstack', icon: 'layers' }
   ];
 
   projects: Project[] = [];
